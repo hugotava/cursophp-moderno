@@ -12,6 +12,17 @@
         $nome = "Hugo";
         $sobrenome = "Tavares";
         echo "$nome $sobrenome \u{1F179}";
+
+        $canal = "Curso em Vídeo";
+        $ano = date('Y');
+        echo <<< TESTE
+            Olá galera do $canal!
+                    Tudo bem com vocês?
+                Como está sendo esse ano de $ano?
+            Abraços! \u{1F596}
+        TESTE;
+
+
     ?>
     </h1>
 </body>
