@@ -15,13 +15,21 @@
 
         $canal = "Curso em Vídeo";
         $ano = date('Y');
+        // Sintaxe HereDoc (Interpreta as variáveis dentro dela)
         echo <<< TESTE
             Olá galera do $canal!
                     Tudo bem com vocês?
                 Como está sendo esse ano de $ano?
-            Abraços ! \u{1F596}
+            Abraços ! \u{1F596}\n\n
         TESTE;
-
+        
+        //Sintaxe NowDoc (Não interpreta as variáveis dentro dela)
+        echo <<< 'TESTE1'
+        Olá galera do $canal!
+                Tudo bem com vocês???
+            Como está sendo esse ano de $ano?
+        Abraços ! \u{1F596}
+        TESTE1;
 
     ?>
     </h1>
