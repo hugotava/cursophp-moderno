@@ -7,10 +7,10 @@
 
     $dados = json_decode(file_get_contents($url), true);
 
-    //var_dump($dados);
-
     $cotacao = $dados["value"][0]["cotacaoCompra"];
-    $data_cotacao = $dados["value"][0]["dataHoraCotacao"];
+    
+    //var_dump($dados);
+    //$data_cotacao = $dados["value"][0]["dataHoraCotacao"];
 
     echo "A cotação atual é $cotacao.\n";
     echo "Cotação atualizada em $data_cotacao";
