@@ -11,23 +11,19 @@
     <main>
         <h1>Analisador de Número Real</h1>
         <?php 
-            $num_real = $_GET["numero"] ?? "0";
-            $int_num_real = intval($num_real); 
+            $num_real = $_POST["numero"] ?? "0";
+            // $int_num_real = intval($num_real); -> Minha solução
+            $int_num_real = (int)$num_real; // Solução do Guanabara (mais direto)
             $fra_num_real = $num_real - $int_num_real;
-
-            // echo $num_real . "\n";
-            // echo $int_num_real . "\n";
-            // echo $fra_num_real . "\n";
-            
-            echo "<p>Analisando o número <strong>" . $num_real . "</strong> informado pelo usuário:</p>
+        
+            echo "<p>Analisando o número <strong>" . number_format($num_real, 3 , ",", ".") . "</strong> informado pelo usuário:</p>
             <ul>
-                <li>A parte inteira do número é <strong>" . $int_num_real . "</strong></li>
-                <li>A parte fracionária do número é <strong>" . $fra_num_real . "</strong></li>
+                <li>A parte inteira do número é <strong>" . number_format($int_num_real, 0 , ",", ".") . "</strong></li>
+                <li>A parte fracionária do número é <strong>" . number_format($fra_num_real, 3 , ",", ".") . "</strong></li>
             
             </ul>"
-
-
         ?>
+        <button onclick="javascript:history.go(-1)">Voltar</button>
     </main>
 </body>
 </html>
