@@ -11,23 +11,24 @@
     <?php 
         $dividendo = $_GET['dividendo'] ?? 0;
         $divisor = $_GET['divisor'] ?? 1;
-        $resto = $dividendo % $divisor;
-        $quociente = (int)($dividendo / $divisor);
+       // $resto = $dividendo % $divisor;
+       // $quociente = (int)($dividendo / $divisor);
     ?>
     <main>
-        <h1>Anatomia de uma divisão</h1>
+        <h1>Anatomia de uma Divisão</h1>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="dividendo">Dividendo</label>
-            <input type="number" name="dividendo" id="dividendo">
+            <input type="number" name="dividendo" id="dividendo" min="0" value="<?=$dividendo?>">
             <label for="divisor">Divisor</label>
-            <input type="number" name="divisor" id="divisor">
+            <input type="number" name="divisor" id="divisor" min="1" value="<?=$divisor?>">
             <input type="submit" value="Analisar">
         </form>
     </main>
     <section>
         <h2>Estrutura da Divisão</h2>
         
-        <!-- Solução antes do Guanabara
+        <!-- Minha solução antes de ver a resolução do Guanabara -->
+        <!--
         <p>Dividendo: </p>
             <?=$dividendo?>
         <p>Divisor: </p>
@@ -37,6 +38,24 @@
         <p>Quociente: </p>
             <?=$quociente?>
         -->
+
+        <?php 
+            // Cálculos pela solução do Guanabara
+            $quociente = intdiv($dividendo, $divisor);
+            $resto = $dividendo % $divisor;
+        ?>
+
+        <table class="divisao">
+            <tr>
+                <td><?=$dividendo?></td>
+                <td><?=$divisor?></td>
+            </tr>
+            <tr>
+                <td><?=$resto?></td>
+                <td><?=$quociente?></td>
+            </tr>
+        </table>
+
     </section>
 </body>
 </html>
