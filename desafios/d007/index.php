@@ -16,7 +16,7 @@
         <h1>Informe seu salário</h1>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="salario">Salário (R$)</label>
-            <input type="number" name="salario" id="salario">
+            <input type="number" name="salario" id="salario" value="<?=$salario?>">
             <p>Considerando o salário mínimo de <strong>R$ 1.380,00</strong> </p>
             <input type="submit" value="Calcular">
         </form>
@@ -26,7 +26,13 @@
         <?php 
             $quantidade = (int)($salario / $minimo);
             $resto = $salario % $minimo;
+
+            $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
+
+            echo "<p>Quem recebe um salário de ". numfmt_format_currency($padrao, $salario, "BRL") ." ganha <strong>$quantidade salários mínimos</strong> + ". numfmt_format_currency($padrao, $resto, "BRL") .".</p>"
+        
         ?>
+        
     </section>
 </body>
 </html>
