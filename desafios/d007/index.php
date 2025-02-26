@@ -11,13 +11,13 @@
     <main>
         <?php 
             $salario = $_GET['salario'] ?? 0;
-            $minimo = 1380;
+            $minimo = 1380.60;
         ?>
         <h1>Informe seu salário</h1>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="salario">Salário (R$)</label>
-            <input type="number" name="salario" id="salario" value="<?=$salario?>">
-            <p>Considerando o salário mínimo de <strong>R$ 1.380,00</strong> </p>
+            <input type="number" name="salario" id="salario" value="<?=$salario?>" step="0.01">
+            <p>Considerando o salário mínimo de <strong>R$ <?=number_format($minimo, 2, ",", ".")?></strong> </p>
             <input type="submit" value="Calcular">
         </form>
     </main>
@@ -26,7 +26,7 @@
         <?php 
             $quantidade = (int)($salario / $minimo);
             // $quantidade = intdiv($salario, $minimo); 
-            $resto = $salario % $minimo;
+            $resto = fmod($salario, $minimo); // fmod retorna o resto da divisao de 2 numeros de ponto flutuante
 
             $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
 
