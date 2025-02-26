@@ -25,6 +25,7 @@
         <h2>Resultado final</h2>
         <?php 
             $quantidade = (int)($salario / $minimo);
+            // $quantidade = intdiv($salario, $minimo); 
             $resto = $salario % $minimo;
 
             $padrao = numfmt_create("pt_BR", NumberFormatter::CURRENCY);
