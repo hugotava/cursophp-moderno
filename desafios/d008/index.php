@@ -11,20 +11,27 @@
 
 <body>
     <main>
+        <?php 
+            $numero = $_GET['numero'] ?? 0;
+            $rquad = $numero ** (1/2);
+            $rcubi = $numero ** (1/3);
+        ?>
         <h1>Informe um número</h1>
-        <form action="" method="get">
+        <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="numero">Número</label>
-            <input type="number" name="numero" id="numero">
+            <input type="number" name="numero" id="numero" value="<?=$numero?>">
             <input type="submit" value="Calcular Raízes">
         </form>
     </main>
     <section>
         <h2>Resultado final</h2>
-        <p>Analisando o <strong>número 000</strong>, temos:</p>
+        <?php 
+        echo "<p>Analisando o <strong>número $numero</strong>, temos:</p>
         <ul>
-            <li>A sua raiz quadrada é <strong>1</strong></li>
-            <li>A sua raiz cúbica é <strong>2</strong></li>
-        </ul>
+            <li>A sua raiz quadrada é <strong>" . number_format($rquad, 3, ',', '.') . "</strong></li>
+            <li>A sua raiz cúbica é <strong>" . number_format($rcubi, 3, ',', '.') . "</strong></li>
+        </ul>"
+        ?>
     </section>
 </body>
 
