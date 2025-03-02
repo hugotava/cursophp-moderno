@@ -10,9 +10,9 @@
 <body>
     <main>
         <?php 
-            $valor1 = $_GET['v1'] ?? 0;
+            $valor1 = $_GET['v1'] ?? 10;
             $peso1 = $_GET['p1'] ?? 1;
-            $valor2 = $_GET['v2'] ?? 0;
+            $valor2 = $_GET['v2'] ?? 20;
             $peso2 = $_GET['p2'] ?? 1;
         ?>
         <h1>Médias Aritméticas</h1>
@@ -36,13 +36,13 @@
         <h2>Cálculo das Médias</h2>
         
         <?php 
-            echo ""
-        ?>
-        <p>Analisando os valores <?=$valor1?> e <?=$valor2?>:</p>
+            echo "<p>Analisando os valores $valor1 e $valor2:</p>
         <ul>
-            <li>A <strong>Média Aritmética Simples</strong> entre os valores é igual à </li>
-            <li>A <strong>Média Aritmética Ponderada</strong> com pesos X e Y é igual à </li>
-        </ul>
+            <li>A <strong>Média Aritmética Simples</strong> entre os valores é igual à $msimp.</li>
+            <li>A <strong>Média Aritmética Ponderada</strong> com pesos X e Y é igual à vv</li>
+        </ul>"
+        ?>
+        
     </section>
 </body>
 </html>
