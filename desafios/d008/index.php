@@ -13,6 +13,7 @@
     <main>
         <?php 
             $numero = $_GET['numero'] ?? 0;
+            // $rquad = sqrt($numero);
             $rquad = $numero ** (1/2);
             $rcubi = $numero ** (1/3);
         ?>
