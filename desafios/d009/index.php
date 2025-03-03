@@ -18,13 +18,13 @@
         <h1>Médias Aritméticas</h1>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="v1">1º Valor</label>
-            <input type="number" name="v1" id="v1" value="<?=$valor1?>" step="0.01">
+            <input type="number" name="v1" id="v1" value="<?=$valor1?>" step="0.01" required>
             <label for="p1">1º Peso</label>
-            <input type="number" name="p1" id="p1" value="<?=$peso1?>" step="0.01">
+            <input type="number" name="p1" id="p1" value="<?=$peso1?>" step="0.01" min="1" require>
             <label for="v2">2º Valor</label>
-            <input type="number" name="v2" id="v2" value="<?=$valor2?>" step="0.01">
+            <input type="number" name="v2" id="v2" value="<?=$valor2?>" step="0.01" required>
             <label for="p2">2º Peso</label>
-            <input type="number" name="p2" id="p2" value="<?=$peso2?>" step="0.01">
+            <input type="number" name="p2" id="p2" value="<?=$peso2?>" step="0.01" min="1" required>
             <input type="submit" value="Calcular Médias">
         </form>
     </main>
@@ -41,6 +41,7 @@
             <li>A <strong>Média Aritmética Simples</strong> entre os valores é igual à " . number_format($msimp, 2, ",", ".")  . ".</li>
             <li>A <strong>Média Aritmética Ponderada</strong> com pesos " . number_format($peso1, 2, ",", ".")  . " e " . number_format($peso2, 2, ",", ".")  . " é igual à " . number_format($mpond, 2, ",", ".")  . ".</li>
         </ul>"
+        // Na solução do Guanabara ele utilizou no código html as short tags do php direto com o number_format
         ?>
         
     </section>
