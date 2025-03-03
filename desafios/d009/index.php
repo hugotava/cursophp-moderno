@@ -10,21 +10,21 @@
 <body>
     <main>
         <?php 
-            $valor1 = $_GET['v1'] ?? 10;
+            $valor1 = $_GET['v1'] ?? 0;
             $peso1 = $_GET['p1'] ?? 1;
-            $valor2 = $_GET['v2'] ?? 20;
+            $valor2 = $_GET['v2'] ?? 0;
             $peso2 = $_GET['p2'] ?? 1;
         ?>
         <h1>Médias Aritméticas</h1>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="v1">1º Valor</label>
-            <input type="number" id="v1" value="<?=$valor1?>">
+            <input type="number" name="v1" id="v1" value="<?=$valor1?>" step="0.01">
             <label for="p1">1º Peso</label>
-            <input type="number" id="p1" value="<?=$peso1?>">
+            <input type="number" name="p1" id="p1" value="<?=$peso1?>" step="0.01">
             <label for="v2">2º Valor</label>
-            <input type="number" id="v2" value="<?=$valor2?>">
+            <input type="number" name="v2" id="v2" value="<?=$valor2?>" step="0.01">
             <label for="p2">2º Peso</label>
-            <input type="number" id="p2" value="<?=$peso2?>">
+            <input type="number" name="p2" id="p2" value="<?=$peso2?>" step="0.01">
             <input type="submit" value="Calcular Médias">
         </form>
     </main>
@@ -38,8 +38,8 @@
         <?php 
             echo "<p>Analisando os valores $valor1 e $valor2:</p>
         <ul>
-            <li>A <strong>Média Aritmética Simples</strong> entre os valores é igual à $msimp.</li>
-            <li>A <strong>Média Aritmética Ponderada</strong> com pesos X e Y é igual à vv</li>
+            <li>A <strong>Média Aritmética Simples</strong> entre os valores é igual à " . number_format($msimp, 2, ",", ".")  . ".</li>
+            <li>A <strong>Média Aritmética Ponderada</strong> com pesos " . number_format($peso1, 2, ",", ".")  . " e " . number_format($peso2, 2, ",", ".")  . " é igual à " . number_format($mpond, 2, ",", ".")  . ".</li>
         </ul>"
         ?>
         
