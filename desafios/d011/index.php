@@ -10,15 +10,16 @@
 <body>
     <main>
         <?php 
-            $preco = $_GET['p1'];
-            $porcentagem = $_GET['porc'];
+            $preco = $_GET['p1'] ?? '0';
+            $porcentagem = $_GET['porc'] ?? '0';
         ?>
         <h1>Reajustador de Preços</h1>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="p1">Preço do Produto (R$)</label>
-            <input type="number" name="p1" id="p1" value="<?=$preco?>">
-            <label for="porc">Qual será o percentual de reajuste (<strong><?=$porcentagem?> %</strong>)</label>
-            <input type="range" name="porc" id="porc" value="<?=$porcentagem?>">
+            <input type="number" name="p1" id="p1" value="<?=$preco?>" min="0.05" step="0.01">
+            
+            <label for="porc">Qual será o percentual de reajuste (<strong><span id="per">?</span> %</strong>)</label>
+            <input type="range" name="porc" id="porc" value="<?=$porcentagem?>" min="0" max="100" step="1" oninput="mudaValor()">
             <input type="submit" value="Reajustar">
         </form>
     </main>
@@ -29,5 +30,13 @@
         <h2>Resultado do Reajuste</h2>
         <p>O produto que custava R$ <?=$preco?>, com <strong><?=$porcentagem?>% de desconto</strong> vai passar a custar R$ <?=$reajustado?> a partir de agora.</p>
     </section>
+    <script>
+        // Declarações automáticas
+        mudaValor();
+
+        function mudaValor() {
+            per.innerText = porc.value;
+        }
+    </script>
 </body>
 </html>
