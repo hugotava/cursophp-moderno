@@ -9,18 +9,25 @@
 </head>
 <body>
     <main>
+        <?php 
+            $preco = $_GET['p1'];
+            $porcentagem = $_GET['porc'];
+        ?>
         <h1>Reajustador de Preços</h1>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="p1">Preço do Produto (R$)</label>
-            <input type="number" name="p1" id="p1">
-            <label for="porc">Qual será o percentual de reajuste (0%)</label>
-            <input type="range" name="porc" id="porc">
+            <input type="number" name="p1" id="p1" value="<?=$preco?>">
+            <label for="porc">Qual será o percentual de reajuste (<strong><?=$porcentagem?> %</strong>)</label>
+            <input type="range" name="porc" id="porc" value="<?=$porcentagem?>">
             <input type="submit" value="Reajustar">
         </form>
     </main>
     <section>
+        <?php 
+            $reajustado = $preco + ($preco * $porcentagem / 100);
+        ?>
         <h2>Resultado do Reajuste</h2>
-        <p>O produto que custava [], com <strong>[] de desconto</strong> vai passar a custar [] a partir de agora.</p>
+        <p>O produto que custava R$ <?=$preco?>, com <strong><?=$porcentagem?>% de desconto</strong> vai passar a custar R$ <?=$reajustado?> a partir de agora.</p>
     </section>
 </body>
 </html>
