@@ -20,14 +20,20 @@
         </form>
     </main>
     <section>
+        <?php 
+            $minutos = $segundos / 60;
+            $horas = $minutos / 60;
+            $dias = $horas / 24;
+            $semanas = $dias / 7;
+        ?>
         <h2>Totalizando tudo</h2>
         <p>Analisando o valor que você digitou, <strong>[] segundos</strong> equivalem a um total de:</p>
         <ul>
-            <li>[] semanas</li>
-            <li>[] dias</li>
-            <li>[] horas</li>
-            <li>[] minutos</li>
-            <li>[] segundos</li>
+            <li><?=$semanas?> semanas</li>
+            <li><?=$dias?> dias</li>
+            <li><?=$horas?> horas</li>
+            <li><?=$minutos?> minutos</li>
+            <li><?=$segundos?> segundos</li>
         </ul>
     </section>
 </body>
