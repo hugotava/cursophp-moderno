@@ -27,13 +27,13 @@
             $semanas = $dias / 7;
         ?>
         <h2>Totalizando tudo</h2>
-        <p>Analisando o valor que você digitou, <strong>[] segundos</strong> equivalem a um total de:</p>
+        <p>Analisando o valor que você digitou, <strong><?=$segundos?> segundos</strong> equivalem a um total de:</p>
         <ul>
-            <li><?=$semanas?> semanas</li>
-            <li><?=$dias?> dias</li>
-            <li><?=$horas?> horas</li>
-            <li><?=$minutos?> minutos</li>
-            <li><?=$segundos?> segundos</li>
+            <li><?=(int)$semanas?> semanas</li>
+            <li><?=(int)$dias?> dias</li>
+            <li><?=(int)$horas?> horas</li>
+            <li><?=(int)$minutos?> minutos</li>
+            <li><?=(int)$segundos?> segundos</li>
         </ul>
     </section>
 </body>
