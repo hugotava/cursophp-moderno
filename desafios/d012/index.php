@@ -22,11 +22,13 @@
     </main>
     <section>
         <?php 
+            // Equivalências em segundos:
             // 1 min -> 60 seg 
             // 1 hora -> 3600 seg
             // 1 dia -> 86400 seg
             // 1 semana -> 604800 seg
 
+            // Minha solução
             $semanas = (int)($segundos_total / 604800);
             $dias = (int)(($segundos_total % 604800) / 86400);
             $horas = (int)((($segundos_total % 604800) % 86400) / 3600);
