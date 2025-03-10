@@ -22,20 +22,25 @@
     </main>
     <section>
         <?php 
-            $segundos = $segundos_total % 60;
-            $minutos = intdiv($segundos_total, 60);
-            $horas = intdiv($segundos_total, 3600);
-            $dias = $horas / 24;
-            $semanas = $dias / 7;
+            // 1 min -> 60 seg 
+            // 1 hora -> 3600 seg
+            // 1 dia -> 86400 seg
+            // 1 semana -> 604800 seg
+
+            $semanas = (int)($segundos_total / 604800);
+            $dias = (int)(($segundos_total % 604800) / 86400);
+            $horas = (int)((($segundos_total % 604800) % 86400) / 3600);
+            $minutos = (int)(((($segundos_total % 604800) % 86400) % 3600) / 60);
+            $segundos = (int)(((($segundos_total % 604800) % 86400) % 3600) % 60);
         ?>
         <h2>Totalizando tudo</h2>
         <p>Analisando o valor que você digitou, <strong><?=$segundos_total?> segundos</strong> equivalem a um total de:</p>
         <ul>
-            <li><?=(int)$semanas?> semanas</li>
-            <li><?=(int)$dias?> dias</li>
-            <li><?=(int)$horas?> horas</li>
-            <li><?=(int)$minutos?> minutos</li>
-            <li><?=(int)$segundos?> segundos</li>
+            <li><?=$semanas?> semanas</li>
+            <li><?=$dias?> dias</li>
+            <li><?=$horas?> horas</li>
+            <li><?=$minutos?> minutos</li>
+            <li><?=$segundos?> segundos</li>
         </ul>
     </section>
 </body>
