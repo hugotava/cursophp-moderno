@@ -54,13 +54,13 @@
             // A solução do prof Guanabara é mais otimizada pois vai reutilizando a variável $sobra e fazendo as atualizações conforme necessário.
         ?>
         <h2>Totalizando tudo</h2>
-        <p>Analisando o valor que você digitou, <strong><?=$segundos_total?> segundos</strong> equivalem a um total de:</p>
+        <p>Analisando o valor que você digitou, <strong><?=number_format($segundos_total, 0, ',', '.')?> segundos</strong> equivalem a um total de:</p>
         <ul>
-            <li><?=$semanas?> semanas</li>
-            <li><?=$dias?> dias</li>
-            <li><?=$horas?> horas</li>
-            <li><?=$minutos?> minutos</li>
-            <li><?=$segundos?> segundos</li>
+            <li><?=$semana?> semanas</li>
+            <li><?=$dia?> dias</li>
+            <li><?=$hora?> horas</li>
+            <li><?=$minuto?> minutos</li>
+            <li><?=$segundo?> segundos</li>
         </ul>
     </section>
 </body>
