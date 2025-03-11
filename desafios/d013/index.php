@@ -38,10 +38,10 @@
         ?>
         <h2>Saque de R$ <?=number_format($saque, 2, ',', '.')?> realizado!</h2>
         <ul>
-            <li><img src="" alt="100reais"> x <?=$nota100?></li>
-            <li><img src="" alt="50reais"> x <?=$nota50?></li>
-            <li><img src="" alt="10reais"> x <?=$nota10?></li>
-            <li><img src="" alt="5reais"> x <?=$nota5?></li>
+            <li><img src="100-reais.jpg" height="80px" alt="100reais"> x <?=$nota100?></li>
+            <li><img src="50-reais.jpg" height="80px" alt="50reais"> x <?=$nota50?></li>
+            <li><img src="10-reais.jpg" height="80px" alt="10reais"> x <?=$nota10?></li>
+            <li><img src="5-reais.jpg" height="80px" alt="5reais"> x <?=$nota5?></li>
         </ul>
     </section>
 </body>
