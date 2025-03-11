@@ -15,7 +15,7 @@
         <h1>Caixa Eletrônico</h1>
         <form action="<?=$_SERVER['PHP_SELF']?>" method="get">
             <label for="saq">Qual valor você deseja sacar? (R$)*</label>
-            <input type="number" name="saq" id="saq" step="5" value="<?=$saque?>">
+            <input type="number" name="saq" id="saq" step="5" required value="<?=$saque?>">
             <input type="submit" value="Sacar">
             <p style="font-size: 0.7em"><sup>*</sup> Notas disponíveis: R$ 100, R$ 50, R$ 10 e R$ 5.</p>
         </form>
@@ -44,10 +44,10 @@
         ?>
         <h2>Saque de R$ <?=number_format($saque, 2, ',', '.')?> realizado!</h2>
         <ul>
-            <li><img src="100-reais.jpg" height="80px" alt="100reais"> x <?=$nota100?></li>
-            <li><img src="50-reais.jpg" height="80px" alt="50reais"> x <?=$nota50?></li>
-            <li><img src="10-reais.jpg" height="80px" alt="10reais"> x <?=$nota10?></li>
-            <li><img src="5-reais.jpg" height="80px" alt="5reais"> x <?=$nota5?></li>
+            <li><img src="100-reais.jpg" class="nota" alt="100reais"> x <?=$nota100?></li>
+            <li><img src="50-reais.jpg" class="nota" alt="50reais"> x <?=$nota50?></li>
+            <li><img src="10-reais.jpg" class="nota" alt="10reais"> x <?=$nota10?></li>
+            <li><img src="5-reais.jpg" class="nota" alt="5reais"> x <?=$nota5?></li>
         </ul>
     </section>
 </body>
