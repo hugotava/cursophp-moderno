@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
     <title>Desafio PHP nº 13 - Caixa Eletrônico</title>
+    <style>
+        img.nota {
+            height: 80px;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
     <main>
