@@ -1,9 +1,9 @@
 # PHP Moderno - Curso em Vídeo
 
-Este repositório contém os exercícios realizados durante o curso **[PHP Moderno](https://www.cursoemvideo.com/curso/curso-de-php-moderno-modulo-01/)** da plataforma [Curso em Vídeo](https://www.cursoemvideo.com/), ministrado pelo professor **[Gustavo Guanabara](https://github.com/gustavoguanabara)**.
+Este repositório contém os exercícios e desafios realizados durante o curso **[PHP Moderno](https://www.cursoemvideo.com/curso/curso-de-php-moderno-modulo-01/)** da plataforma [Curso em Vídeo](https://www.cursoemvideo.com/), ministrado pelo professor **[Gustavo Guanabara](https://github.com/gustavoguanabara)**.
 
 ## 📌 Sobre o Curso
-O curso aborda conceitos fundamentais e avançados de **PHP**, explorando boas práticas e recursos modernos da linguagem.
+O curso aborda conceitos fundamentais e avançados de **PHP**, explorando boas práticas e recursos da linguagem com aplicações na prática.
 
 ## 📂 Estrutura do Repositório
 Os arquivos estão organizados por exercícios, seguindo a numeração sequencial:
